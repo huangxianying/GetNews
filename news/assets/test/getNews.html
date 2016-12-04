@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="wscat">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="../lib/angular.js"></script>
+	<body ng-controller="indexCtrl">
+	</body>
+	<script>
+		var app = angular.module('wscat',[]);
+		app.controller('indexCtrl',function($scope,$http){
+			$http.get('http://localhost:81/angular/news/index.php/news_api/show_list').success(function(data){
+				console.log(data);
+			})
+		})
+	</script>
+</html>
